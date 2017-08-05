@@ -1,8 +1,27 @@
+import java.util.Scanner;
 
 public class MakeChange {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Scanner kb = new Scanner(System.in);
+		
+		System.out.println("What is the price of the item?");
+		double price = kb.nextDouble();
+		
+		System.out.println("How much are you giving me?");
+		double tender = kb.nextDouble();
+		
+		// Make sure tendered amount isnt too little or an exact amount.
+		
+		if (tender < price) {
+			System.out.println("Sorry, you're a little short.");
+		}
+		
+		else if (tender == price){
+			System.out.println("Thanks, run along now.");
+		}
+		
+		//list of possible denominations 
 
 	}
 
