@@ -22,6 +22,11 @@ public class MakeChange {
 		}
 		
 		//list of possible denominations 
+		
+		// division done to find remainder
+		double change = ((100*tender) - (100*price))/100 ;
+		System.out.println(change);
+				
 
 	}
 
