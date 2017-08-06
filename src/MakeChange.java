@@ -1,14 +1,16 @@
 import java.util.Scanner;
 
 public class MakeChange {
+static int[] denom = {2000, 1000, 500, 100, 25, 10, 5, 1};
 
-	public static void main(String[] args) {
-		Scanner kb = new Scanner(System.in);
-		
-		int[] denom = {2000, 1000, 500, 100, 25, 10, 5, 1};
-		String[] bill = {"twenty dollar bill", "ten dollar bill", "five dollar bill", "one dollar bill", 
+static String[] bill = {"twenty dollar bill", "ten dollar bill", "five dollar bill", "one dollar bill", 
+"quarter", "dime", "nickel", "penny"};
+
+static String[] bills = {"twenty dollar bills", "ten dollar bills", "five dollar bills", "one dollar bills", 
 		"quarters", "dimes", "nickels", "pennies"};
-		int amount;
+static Scanner kb = new Scanner(System.in);
+	
+	public static void main(String[] args) {
 		
 		System.out.println("What is the price of the item?");
 		double price = kb.nextDouble();
@@ -16,7 +18,7 @@ public class MakeChange {
 		System.out.println("How much are you giving me?");
 		double tender = kb.nextDouble();
 		
-		// Make sure tendered amount isnt too little or an exact amount.
+		double change = ((100*tender) - (100*price)) ;
 		
 		if (tender < price) {
 			System.out.println("Sorry, you're a little short.");
@@ -26,24 +28,26 @@ public class MakeChange {
 			System.out.println("Thanks, run along now.");
 		}
 		
-		//list of possible denominations 
-		
-		// division done to find remainder
-		double change = ((100*tender) - (100*price)) ;
-		
-		
-		// given the the change, it needs to be put into denominations.
-		//need a loop? to repeat denominations if needed.
-		
-		
-		for(int i = 0; i <denom.length; i++ ) {
-			amount = (int)(change/denom[i]);
-			change = change%denom[i];
-			if (amount != 0) {
-			System.out.println(amount + " " + bill[i]);
-			}
+		else
+			PrintChange(tender, price, change) ;
 		}
-	
+		
+		
+			static void PrintChange(double tender, double price, double change) {
+			
+			int amount;
+			for(int i = 0; i <denom.length; i++ ) {
+				amount = (int)(change/denom[i]);
+				change = change%denom[i];
+				if ((amount < 2)&&(amount != 0)) {
+				System.out.println(amount + " " + bill[i]);
+				}
+				else if(amount > 1) {
+				System.out.println(amount + " " + bills[i]);
+				}
+			
+			}
+		
 				
 
 	}
