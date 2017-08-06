@@ -12,27 +12,32 @@ static Scanner kb = new Scanner(System.in);
 	
 	public static void main(String[] args) {
 		
-		System.out.println("What is the price of the item?");
-		double price = kb.nextDouble();
+		PromptUser();
 		
-		System.out.println("How much are you giving me?");
-		double tender = kb.nextDouble();
-		
-		double change = ((100*tender) - (100*price)) ;
-		
-		if (tender < price) {
-			System.out.println("Sorry, you're a little short.");
-		}
-		
-		else if (tender == price){
-			System.out.println("Thanks, run along now.");
-		}
-		
-		else
-			PrintChange(tender, price, change) ;
-		}
+	}
 		
 		
+				static void PromptUser() {
+				System.out.println("What is the price of the item?");
+				double price = kb.nextDouble();
+				
+				System.out.println("How much are you giving me?");
+				double tender = kb.nextDouble();
+				
+				double change = ((100*tender) - (100*price)) ;
+				
+				if (tender < price) {
+					System.out.println("Sorry, you're a little short.");
+				}
+				
+				else if (tender == price){
+					System.out.println("Thanks, run along now.");
+				}
+				
+				else
+					PrintChange(tender, price, change) ;
+				}
+			
 			static void PrintChange(double tender, double price, double change) {
 			
 			int amount;
