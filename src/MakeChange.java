@@ -30,7 +30,7 @@ public class MakeChange {
 		
 		// division done to find remainder
 		double change = ((100*tender) - (100*price)) ;
-		System.out.println(change);
+		
 		
 		// given the the change, it needs to be put into denominations.
 		//need a loop? to repeat denominations if needed.
@@ -39,8 +39,9 @@ public class MakeChange {
 		for(int i = 0; i <denom.length; i++ ) {
 			amount = (int)(change/denom[i]);
 			change = change%denom[i];
-			
+			if (amount != 0) {
 			System.out.println(amount + " " + bill[i]);
+			}
 		}
 	
 				
