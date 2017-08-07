@@ -1,4 +1,4 @@
 # Make Change Project
-##Week 1 homework for SD
+##Week 1 homework for Skill Distillery 
 
-this was my first hw 
+This was my first hw assignment 
