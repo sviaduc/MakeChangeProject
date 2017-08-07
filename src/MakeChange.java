@@ -16,8 +16,7 @@ static Scanner kb = new Scanner(System.in);
 		
 	}
 		
-		
-				static void PromptUser() {
+			static void PromptUser() {
 				System.out.println("What is the price of the item?");
 				double price = kb.nextDouble();
 				
@@ -40,21 +39,19 @@ static Scanner kb = new Scanner(System.in);
 			
 			static void PrintChange(double tender, double price, double change) {
 			
-			int amount;
-			for(int i = 0; i <denom.length; i++ ) {
-				amount = (int)(change/denom[i]);
-				change = change%denom[i];
-				if ((amount < 2)&&(amount != 0)) {
-				System.out.println(amount + " " + bill[i]);
-				}
-				else if(amount > 1) {
-				System.out.println(amount + " " + bills[i]);
-				}
-			
-			}
-		
+				int amount;
+				for(int i = 0; i <denom.length; i++ ) {
+					amount = (int)(change/denom[i]);
+					change = change%denom[i];
+					if ((amount < 2)&&(amount != 0)) {
+					System.out.println(amount + " " + bill[i]);
+					}
+					else if(amount > 1) {
+					System.out.println(amount + " " + bills[i]);
+					}
 				
-
-	}
+				}
+		
+		}
 
 }
